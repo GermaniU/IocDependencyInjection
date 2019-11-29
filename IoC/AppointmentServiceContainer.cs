@@ -8,6 +8,7 @@ namespace IoC
         public AppointmentServiceContainer()
         {
             For<IAppointmentServiceValidator>().Use<AppointmentServiceValidator>();
+            For<IAppointmentService>().Use<AppointmentService>();
         }
     }
 }

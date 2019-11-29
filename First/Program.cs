@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using IoC;
 using StructureMap;
+using System;
 using static System.Console;
 namespace First
 {
@@ -10,20 +8,24 @@ namespace First
     {
         static void Main(string[] args)
         {
-            IAppointmentServiceValidator validator = new AppointmentServiceValidator();
-
             var container = Container.For<AppointmentServiceContainer>();
 
-             var appt = new Appointment
-            {
-                Patient = new Patient
-                {
-                    Name = "Rodrigo"
-                },
-                Time = new DateTime(2019, 03, 08, 15, 20, 19)
+            var appointmentService = container.GetInstance<IAppointmentService>();
 
+            var paciente = new Patient
+            {
+                Name = "Rodrigo",
+                Email = "Rodrigo@gmail.com"
             };
-            WriteLine(new AppointmentService(validator).Create(appt));
+
+            var appt = new Appointment
+            {
+                Time = new DateTime(2019, 03, 08, 15, 20, 19),
+                Patient = paciente
+            };
+
+
+            WriteLine(appointmentService.Create(appt));
 
             ReadLine();
         }

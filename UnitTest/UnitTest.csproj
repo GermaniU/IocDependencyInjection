@@ -70,9 +70,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\First\First.csproj">
+    <ProjectReference Include="..\Business\Business.csproj">
+      <Project>{9AB99F51-74C2-4436-B1AB-6783F45D9654}</Project>
+      <Name>Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\First\View.csproj">
       <Project>{CE2FE93F-5425-48CB-8FF2-3EC71FB20D83}</Project>
-      <Name>First</Name>
+      <Name>View</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

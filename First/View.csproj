@@ -47,19 +47,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clases\Appointment.cs" />
-    <Compile Include="Clases\AppointmentService.cs" />
-    <Compile Include="Clases\AppointmentServiceValidator.cs" />
-    <Compile Include="Interfaces\IAppointmentServiceValidator.cs" />
-    <Compile Include="Clases\Patient.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Clases\ValidationResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Business\Business.csproj">
+      <Project>{9AB99F51-74C2-4436-B1AB-6783F45D9654}</Project>
+      <Name>Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IoC\IoC.csproj">
+      <Project>{AC32C78E-6811-49DD-8A00-833EA65B110B}</Project>
+      <Name>IoC</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

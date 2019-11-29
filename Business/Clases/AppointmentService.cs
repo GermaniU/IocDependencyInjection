@@ -2,9 +2,8 @@
 
 namespace First
 {
-    public class AppointmentService
+    public class AppointmentService : IAppointmentService
     {
-
         private readonly IAppointmentServiceValidator validator;
 
         public AppointmentService(IAppointmentServiceValidator _validator)
